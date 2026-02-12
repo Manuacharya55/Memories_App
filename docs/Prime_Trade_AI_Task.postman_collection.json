@@ -1,0 +1,327 @@
+{
+  "info": {
+    "_postman_id": "06a910d6-aa02-4e99-97d6-6812dadf902f",
+    "name": "Prime_Trade_AI_Task",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30667942"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register Account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullname\":\"Jhon Doe\",\r\n    \"email\":\"jhondoe@gmail.com\",\r\n    \"password\":\"password55\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/users/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"jhondoe@gmail.com\",\r\n    \"password\":\"password55\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/users/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Memories",
+      "item": [
+        {
+          "name": "Fetch All Memories",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "auth-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGQ2MTdlNWJkOTk3ZjNmMzRhOTk2NSIsImlhdCI6MTc3MDg4OTA5MywiZXhwIjoxNzcwOTc1NDkzfQ.NRhHaYLTZAz_mGjBAQO-_71Q9jn23x3qoFWI559zqK8",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4000/api/v1/memories?page=1&limit=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "memories"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Memories",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "auth-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGQ2MTdlNWJkOTk3ZjNmMzRhOTk2NSIsImlhdCI6MTc3MDg4OTA5MywiZXhwIjoxNzcwOTc1NDkzfQ.NRhHaYLTZAz_mGjBAQO-_71Q9jn23x3qoFWI559zqK8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"sky view\",\r\n    \"image\":\"https://images.unsplash.com/photo-1591334114945-305a6df54e25?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGFyayUyMGFlc3RoZXRpYyUyMG1lbW9yaWVzfGVufDB8MnwwfHx8MA%3D%3D\",\r\n    \"date\":\"2026-02-13\",\r\n    \"tag\":\"office\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/memories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "memories"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Memory",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "auth-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGQ2MTdlNWJkOTk3ZjNmMzRhOTk2NSIsImlhdCI6MTc3MDg4OTA5MywiZXhwIjoxNzcwOTc1NDkzfQ.NRhHaYLTZAz_mGjBAQO-_71Q9jn23x3qoFWI559zqK8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"sky view\",\r\n    \"image\":\"https://images.unsplash.com/photo-1591334114945-305a6df54e25?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGFyayUyMGFlc3RoZXRpYyUyMG1lbW9yaWVzfGVufDB8MnwwfHx8MA%3D%3D\",\r\n    \"date\":\"2026-02-13\",\r\n    \"tag\":\"office\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/memories/698da067b064928f75695854",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "memories",
+                "698da067b064928f75695854"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Memory",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "auth-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGQ2MTdlNWJkOTk3ZjNmMzRhOTk2NSIsImlhdCI6MTc3MDg4OTA5MywiZXhwIjoxNzcwOTc1NDkzfQ.NRhHaYLTZAz_mGjBAQO-_71Q9jn23x3qoFWI559zqK8",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4000/api/v1/memories/698da067b064928f75695854",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "memories",
+                "698da067b064928f75695854"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Memory",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "item": [
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Update Password",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "auth-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGQ2MTdlNWJkOTk3ZjNmMzRhOTk2NSIsImlhdCI6MTc3MDg4OTA5MywiZXhwIjoxNzcwOTc1NDkzfQ.NRhHaYLTZAz_mGjBAQO-_71Q9jn23x3qoFWI559zqK8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"currentpassword\":\"password55\", \r\n    \"newpassword\":\"password66\", \r\n    \"confirmpassword\":\"password66\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/users/update-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "update-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "auth-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGQ2MTdlNWJkOTk3ZjNmMzRhOTk2NSIsImlhdCI6MTc3MDg4OTA5MywiZXhwIjoxNzcwOTc1NDkzfQ.NRhHaYLTZAz_mGjBAQO-_71Q9jn23x3qoFWI559zqK8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullname\":\"Jhon Doe\",\r\n    \"email\":\"jhondoe55@gmail.com\",\r\n    \"image\":\"https://images.unsplash.com/photo-1591334114945-305a6df54e25?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGFyayUyMGFlc3RoZXRpYyUyMG1lbW9yaWVzfGVufDB8MnwwfHx8MA%3D%3D\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/users/update-profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "update-profile"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -45,10 +45,10 @@ export const UpdatePassword = asyncHandler(
 
 export const UpdateProfile = asyncHandler(
     async (req, res) => {
-        const { fullname, email,image } = req.body;
+        const { fullname, email, image } = req.body;
         const id = req?.user?._id
 
-        const user = await User.findByIdAndUpdate(id, { $set: { fullname, email,image } }, { new: true });
+        const user = await User.findByIdAndUpdate(id, { $set: { fullname, email, image } }, { new: true });
 
         if (!user) {
             return res.status(400).json(new NotFoundError("User not found"));
