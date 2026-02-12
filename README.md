@@ -281,7 +281,7 @@ Protected routes require a **Token** in the header.
 > Requires Header:
 
 ```
-Authorization: Bearer <your_jwt_token>
+auth-token : <your_jwt_token>
 ```
 
 ---
@@ -376,7 +376,7 @@ Authorization: Bearer <your_jwt_token>
 > Requires Header:
 
 ```
-Authorization: Bearer <your_jwt_token>
+auth-token : <your_jwt_token>
 ```
 
 ---
